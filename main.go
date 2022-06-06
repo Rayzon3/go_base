@@ -48,3 +48,12 @@ type token struct {
 	kind  tokenKind
 	loc   coords
 }
+
+type cursor struct {
+	pointer uint
+	loc     coords
+}
+
+func (t *token) equals(other *token) bool {
+	return t.value == other.value && t.kind == other.kind
+}
