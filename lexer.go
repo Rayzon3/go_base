@@ -57,3 +57,5 @@ type cursor struct {
 func (t *token) equals(other *token) bool {
 	return t.value == other.value && t.kind == other.kind
 }
+
+type lexer func(string, cursor) (*token, cursor, bool)
